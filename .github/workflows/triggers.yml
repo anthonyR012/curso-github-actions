@@ -1,0 +1,21 @@
+name: My First Trigger
+on:
+    pull_request:
+        branches:
+            - main
+    issues:
+        types:
+            - labeled
+
+jobs:
+    hola-mundo:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v3
+          
+          - name: Setup Dart
+            uses: dart-lang/setup-dart@v1
+  
+          - name: Hello from Dart
+            run: dart hello-world.dart

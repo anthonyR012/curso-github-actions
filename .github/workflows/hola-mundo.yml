@@ -4,6 +4,11 @@ jobs:
     hola-mundo:
         runs-on: ubuntu-latest
         steps:
+            # The checkout action in GitHub Actions is a fundamental
+            # action used to check out your repository's
+            # code into the workflow's runner environment.
+            # This allows subsequent workflow steps to access the repository's
+            # files and perform tasks such as building, testing, or deploying the code.
           - name: Checkout repository
             uses: actions/checkout@v4
           
@@ -12,3 +17,9 @@ jobs:
   
           - name: Hello from Dart
             run: dart hello-world.dart
+
+# Git hub runs others jobs by default like:
+#     - set up job: this job is used to setup the environment (Configure runner)
+#     - Post chechout: clean everything that was created in the checkout action
+#     - Complete job: this job is used to complete the job (Clean process)
+
