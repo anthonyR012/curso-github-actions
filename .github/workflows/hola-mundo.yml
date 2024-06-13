@@ -4,5 +4,10 @@ jobs:
     hola-mundo:
         runs-on: ubuntu-latest
         steps:
+          - uses: actions/checkout@v4
+          - uses: dart-lang/setup-dart@v1
+
+          - run: dart pub get
+  
           - name: Hello from Dart
             run: dart hello-world.dart
