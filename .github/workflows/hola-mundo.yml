@@ -1,0 +1,8 @@
+name : hola-mundo
+on: [push]
+jobs:
+    hola-mundo:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Hello from Dart
+            run: dart hello-world.dart
